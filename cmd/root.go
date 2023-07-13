@@ -5,7 +5,6 @@ Copyright © 2023 NAME HERE <EMAIL ADDRESS>
 package cmd
 
 import (
-	"encoding/hex"
 	"fmt"
 	"os"
 
@@ -41,9 +40,9 @@ var rootCmd = &cobra.Command{
 	// Uncomment the following line if your bare application
 	// has an action associated with it:
 	Run: func(cmd *cobra.Command, args []string) {
-		fmt.Println("Query:", query)
-		fmt.Println("Qtype", qtype)
-		fmt.Println("Qclass", qclass)
+		//fmt.Println("Query:", query)
+		//fmt.Println("Qtype", qtype)
+		//fmt.Println("Qclass", qclass)
 		if query[len(query)-1] != '.' {
 			query = query + string('.')
 		}
@@ -68,10 +67,10 @@ var rootCmd = &cobra.Command{
 			fmt.Println("Error while creating the dns message:", err)
 			return
 		}
-		fmt.Println(byteArr)
-		fmt.Println(message.String())
-		encodedString := hex.EncodeToString(byteArr)
-		fmt.Println("Encoded Hex String: ", encodedString)
+		//fmt.Println(byteArr)
+		//fmt.Println(message.String())
+		//encodedString := hex.EncodeToString(byteArr)
+		//fmt.Println("Encoded Hex String: ", encodedString)
 		base64_url := Encode(byteArr)
 		fmt.Println(base64_url)
 	},
